@@ -1,1 +1,1 @@
-# python-appium-tricks
+Appium tricks with Python 3
