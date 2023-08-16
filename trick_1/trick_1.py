@@ -1,6 +1,5 @@
 import json
 import time
-import log
 
 
 
@@ -24,5 +23,4 @@ class Connections():
             if count == 10:
                 break
         if data:
-            log.info(f"Connected : {data[0]['isConnected']}")
             return data[0]['isConnected']
