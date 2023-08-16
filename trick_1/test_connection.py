@@ -2,7 +2,7 @@
 from unittest.mock import Mock
 import json
 import pytest
-from connections import Connections
+from trick_1 import Connections
 
 @pytest.fixture
 def mock_driver():
