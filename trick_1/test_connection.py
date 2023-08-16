@@ -2,6 +2,7 @@
 from unittest.mock import Mock
 import pytest
 from trick_1 import Connections
+import os
 
 @pytest.fixture
 def mock_driver():
@@ -28,5 +29,10 @@ def test_check_connection_not_connected(mock_driver):
     result = connections.check_connection()
 
     assert result == False
+
+def test_use_secret():
+    secret_value = os.environ.get('API_KEY')
+    assert secret_value is not None, "Secret not available"
+
 
 # Add more test cases as needed
