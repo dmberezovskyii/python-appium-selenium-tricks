@@ -28,7 +28,7 @@ jobs:
       run: | 
         pytest
     - name: Run tests
-  run: pytest --junit-xml=test-results.xml
+        run: pytest --junit-xml=test-results.xml
 
     - name: Surface tests
       if: always()
