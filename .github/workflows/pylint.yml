@@ -30,24 +30,7 @@ jobs:
           API_KEY: ${{ secrets.API_KEY }}
       run: | 
         pytest --junit-xml=test-results.xml
-
-  lint:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: 3.8
-
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install pylint
-
+        
     - name: Run Pylint on the entire project
       run: pylint $(git ls-files '*.py')
       env:
