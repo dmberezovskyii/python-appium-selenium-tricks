@@ -26,8 +26,7 @@ jobs:
 
     - name: Run pytest
       env:
-          REPO_SECRET: ${{ secrets.API_KEY }}
-          DEV_SECRET: ${{ secrets.API_KEY }}  
+          API_KEY: ${{ secrets.API_KEY }}
       run: | 
         pytest --junit-xml=test-results.xml
     - name: Run Pylint on the entire project
