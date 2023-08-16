@@ -21,24 +21,13 @@ def test_check_connection_connected(mock_driver):
 
 def test_check_connection_not_connected(mock_driver):
     mock_resp = {
-        'networks': []
+        'networks': [{'isConnected': False}]
     }
-    mock_driver.execute_script.side_effect = [
-        json.dumps(mock_resp),
-        json.dumps(mock_resp),
-        json.dumps(mock_resp),
-        json.dumps(mock_resp),
-        json.dumps(mock_resp),
-        json.dumps(mock_resp),
-        json.dumps(mock_resp),
-        json.dumps(mock_resp),
-        json.dumps(mock_resp),
-        json.dumps(mock_resp),
-    ]
+    mock_driver.execute_script.return_value = mock_resp
 
     connections = Connections(mock_driver)
     result = connections.check_connection()
 
-    assert result == None  # Since no connection was established
+    assert result == False
 
 # Add more test cases as needed
