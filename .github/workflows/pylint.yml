@@ -27,3 +27,7 @@ jobs:
     - name: Run pytest
       run: | 
         pytest --junit-xml=test-results.xml
+    - name: Run Pylint on the entire project
+      run: pylint $(git ls-files '*.py')
+      env:
+        PYLINTRC: dev
