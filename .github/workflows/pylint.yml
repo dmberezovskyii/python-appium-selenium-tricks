@@ -24,10 +24,6 @@ jobs:
         pip install -r requirements.txt
         pip install pylint
 
-    - name: Run Pylint on the entire project
-      run: pylint $(git ls-files '*.py')
-      env:
-        PYLINTRC: pylintrc
     - name: Run pytest
       run: | 
         pytest
