@@ -1,6 +1,5 @@
 # test_connections.py
 from unittest.mock import Mock
-import json
 import pytest
 from trick_1 import Connections
 
