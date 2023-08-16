@@ -31,7 +31,7 @@ def test_check_connection_not_connected(mock_driver):
     assert result == False
 
 def test_use_secret():
-    secret_value = os.environ.get('API_KEY')
+    secret_value = os.environ["API_KEY"]
     assert secret_value is not None, "Secret not available"
 
 
