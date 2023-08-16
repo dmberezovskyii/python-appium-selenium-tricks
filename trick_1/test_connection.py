@@ -1,8 +1,8 @@
 # test_connections.py
 from unittest.mock import Mock
+import os
 import pytest
 from trick_1 import Connections
-import os
 
 @pytest.fixture
 def mock_driver():
