@@ -25,4 +25,6 @@ jobs:
         pip install pylint
 
     - name: Run Pylint on the entire project
-      run: pylint --rcfile=pylintrc .
+      run: pylint $(git ls-files '*.py')
+      env:
+        PYLINTRC: pylintrc
