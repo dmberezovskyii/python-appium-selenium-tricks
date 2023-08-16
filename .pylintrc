@@ -126,7 +126,7 @@ disable=print-statement,
         too-few-public-methods,
         missing-function-docstring,
         no-member,
-        C0103, W0621, W0621, W0621, C0304, C0121
+        C0103, W0621, W0621, W0621, C0304, C0121, R1710
 
 # Enable the message, report, category or checker with the given id(s). You can
 # either give multiple identifier separated by comma (,) or put this option
