@@ -6,7 +6,7 @@ on:
       - main
   schedule:
     - cron: "0 0 * * *"
-
+    
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -32,6 +32,9 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
+        
+    - name: Install and Run Appium Server
+      uses: moatazeldebsy/appium-server-gitHub-action@V1.0.4
 
     - name: Run pytest
       env:
