@@ -1,4 +1,6 @@
 import pytest
-@pytest.mark.parametrize("mobile_driver")
+
+
+@pytest.mark.usefixtures("mobile_driver")
 class BaseTest:
     pass

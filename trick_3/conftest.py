@@ -2,7 +2,7 @@ import pytest
 from appium import webdriver
 
 
-def pytest_addoption(parser):
+def pytest_addoption(parser) -> None:
     parser.addoption("--platform", action="store", default="android", help="Android OS used by default")
 
 
