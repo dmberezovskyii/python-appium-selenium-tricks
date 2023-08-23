@@ -1,0 +1,1 @@
+# Base mobile framework structure
