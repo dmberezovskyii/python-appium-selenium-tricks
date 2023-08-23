@@ -1,12 +1,14 @@
-name: Appium CI
+name: Lint and Test
 
 on:
   push:
     branches:
       - main
+  schedule:
+    - cron: "0 0 * * *"
 
 jobs:
-  appium_test:
+  Sauce Labs App Automate:
     runs-on: ubuntu-latest
     name: Appium Test
     steps:
@@ -14,42 +16,6 @@ jobs:
         uses: actions/checkout@v2
       - name: Install and Run Appium Server
         uses: moatazeldebsy/appium-server-gitHub-action@V1.0.4
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.8
-      - name: Use Node.js 16.x
-        uses: actions/setup-node@v2
-        with:
-          node-version: 16.x
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-      - name: Run pytest
-        env:
-          API_KEY: ${{ secrets.API_KEY }}
-        run: | 
-          python -m pytest --verbose --junit-xml=test-results.xml
-      - name: Publish Test Report
-        uses: mikepenz/action-junit-report@v3
-        if: success() || failure() # always run even if the previous step fails
-        with:
-          report_paths: '**/test-results.xml'
-          detailed_summary: true
-          include_passed: true
-      - name: Run Pylint on the entire project
-        run: pylint $(git ls-files '*.py')
-        env:
-          PYLINTRC: dev
-
-# Existing "Lint and Test" workflow
-on:
-  push:
-    branches:
-      - main
-  schedule:
-    - cron: "0 0 * * *"
 
 jobs:
   test:
