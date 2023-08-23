@@ -1,0 +1,12 @@
+ pixel:
+   platformName: "Android"
+   deviceName: "Android Device 1"
+   automationName: "UiAutomator2"
+   app: "path/to/your/app.apk"
+   appPackage: "com.example.myapp"
+   appActivity: "com.example.myapp.MainActivity"
+   noReset: true
+   fullReset: false
+   autoGrantPermissions: true
+   newCommandTimeout: 600
+   networkConnection: "wifi"
