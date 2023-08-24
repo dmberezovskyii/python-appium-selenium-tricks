@@ -9,7 +9,7 @@ def pytest_addoption(parser) -> None:
 @pytest.fixture(scope="class", name="mobile_driver")
 def fixture_mobile_driver(request):
     desired_caps = {'platformName': 'Android', 'deviceName': 'Android', 'appPackage': 'com.goibibo',
-                    'appActivity': '.common.HomeActivity', 'noReset': True}
+                    'appActivity': '.common.HomeActivity', 'noReset': True, 'isHeadless': True}
     driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
     request.cls.driver = driver
     driver.implicitly_wait(10)
