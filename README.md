@@ -1,1 +1,1 @@
-# Appium tricks with Python 3
+# Selenium/Appium tricks with Python 3
